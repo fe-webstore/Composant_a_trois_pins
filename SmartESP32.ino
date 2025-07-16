@@ -55,8 +55,26 @@ void Autoupdate() {
   }
 }
 
+
+
 void lirePoten() {
   // Lit la valeur du potentiomètre et calcule le pourcentage
   potenValue = analogRead(PIN_POTENTIO);
   potenPct = (potenValue / 4095.0);
 }
+
+
+
+
+//🔢 Pourquoi des valeurs comme 4095 sur ESP32 ?
+//Un convertisseur 12 bits donne des valeurs de 0 à 2¹² - 1 = 4095
+
+//Donc :
+
+//0 correspond à 0V
+
+//4095 correspond à la tension maximale de référence, en général 3.3V
+
+//C’est pourquoi dans ton code ESP32, tu as :
+
+//potenPct = (potenValue / 4095.0);
