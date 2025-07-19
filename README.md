@@ -4,35 +4,25 @@
 ![Diapositive 1](https://github.com/user-attachments/assets/0ace3ed2-26e2-4a16-b44a-2b61a4aa9f67)
 
 
+![Diapositive 1](https://github.com/user-attachments/assets/2042f452-e3df-4b4a-8911-11fe8dedc31d)
+
+
+
+![Diapositive 2](https://github.com/user-attachments/assets/790d9aa3-8557-4225-9322-e738728ac0b3)
+
+
+![Diapositive 3](https://github.com/user-attachments/assets/6220b9f8-1254-4f99-8835-e724a01a1c66)
+
+
+
+![Diapositive 4](https://github.com/user-attachments/assets/5046f862-83de-44f0-a123-495239ca08fd)
+
+
+![Présen](https://github.com/user-attachments/assets/505c3252-4c0f-443d-ba5f-d5eda05966a6)
+
+
 # Composant_-_trois_pins
 Ce dépôt contient des exemples de code et des instructions d'utilisation pour différents capteurs et composants analogiques utilisant une configuration à 3 broches : GND, VCC et une broche de sortie analogique. Cela inclut des modules comme les potentiomètres, les capteurs de niveau d'eau et d'autres .
-
-
-<img width="390" height="266" alt="image" src="https://github.com/user-attachments/assets/fdad617e-4e8a-4323-813d-b7eb9029a608" />
-
-
-
-
-<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/6da9b0bf-6b6b-465b-85d1-87742a1cf869" />
-
-
-
-
-<img width="600" height="319" alt="image" src="https://github.com/user-attachments/assets/e195d56c-2f66-40cb-ae23-47cd9fbe5b4f" />
-
-
-
-<img width="354" height="194" alt="image" src="https://github.com/user-attachments/assets/6bbbf381-5dd7-4898-913c-3373b5a3009a" />
-
-
-
-<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/0fc249fe-9595-4b95-a330-fbbe416aae71" />
-
-
-
-<img width="650" height="650" alt="image" src="https://github.com/user-attachments/assets/34c70520-71b5-461c-8f48-3ae889733b3a" />
-
-
 
 
 
