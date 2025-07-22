@@ -75,5 +75,7 @@ void lireHumidite() {
 
 //C’est pourquoi dans ton code ESP32, tu as :
 
-//potenPct = (potenValue / 4095.0);
+// humidityPct = (humidityRaw / 4095.0) ;
+
+//  sur  ESP8266 1024 ;
 
