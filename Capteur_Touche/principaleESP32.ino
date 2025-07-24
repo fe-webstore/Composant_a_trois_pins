@@ -15,12 +15,15 @@ AutoUpdatePayload payload;
 unsigned long lastUpdateTime = 0;
 const unsigned long updateInterval = 500; // Intervalle de mise à jour en millisecondes
 
-// Définition de la broche du capteur tactile
-const int PIN_TOUCH_SENSOR = 35; // GPIO35 par exemple
+// Définition de la broche du capteur
+const int PIN_CAPTEUR = 35;
 
-// Variables globales
-int touchRaw = 0;
-float touchPct = 0.0;
+
+
+// variable globale
+
+int capteurValeur = 0;
+float capteurPct = 0.0;
 
 void setup() {
   Serial.begin(115200); // Initialisation de la communication série
@@ -29,11 +32,17 @@ void setup() {
 }
 
 void loop() {
+
+
+
+
+
   Smartcommande(); // Gestion des commandes intelligentes
   Autoupdate(); // Mise à jour automatique des données
 }
 
 void Smartcommande() {
+  // Vérifie s'il y a une nouvelle commande
   if (!lastCommand.isEmpty()) {
     lastCommand = "";
     sendAutoUpdate(payload);
@@ -43,23 +52,34 @@ void Smartcommande() {
 }
 
 void Autoupdate() {
+  // Met à jour les données à intervalles réguliers
   if (millis() - lastUpdateTime > updateInterval) {
-    lireTouch(); // Lecture de la valeur tactile
+  
+  lireCapteur(); // Lecture de la valeur du capteur
+    // Envoi des données lues
 
-    // Envoi des données
-    payload.ecran1 = touchRaw;
-    payload.indicateur1 = touchPct;
+
+     payload.ecran1 = capteurValeur;
+    payload.indicateur1 = capteurPct;
+   
 
     sendAutoUpdate(payload);
-    lastUpdateTime = millis();
+    lastUpdateTime = millis(); // Met à jour le temps de la dernière mise à jour
   }
 }
 
-void lireTouch() {
-  // Lire la valeur brute du capteur tactile
-  touchRaw = analogRead(PIN_TOUCH_SENSOR); 
-  touchPct = (touchRaw / 4095.0);
+
+void lireCapteur() {
+  // Lit la valeur du capteur et calcule le pourcentage
+  capteurValeur = analogRead(PIN_CAPTEUR);
+  capteurPct = (capteurValeur / 4095.0);
 }
+
+
+
+
+
+
 
 //🔢 Pourquoi des valeurs comme 4095 sur ESP32 ?
 //Un convertisseur 12 bits donne des valeurs de 0 à 2¹² - 1 = 4095
@@ -67,7 +87,9 @@ void lireTouch() {
 //Donc :
 
 //0 correspond à 0V
+
 //4095 correspond à la tension maximale de référence, en général 3.3V
 
 //C’est pourquoi dans ton code ESP32, tu as :
-//touchPct = (touchRaw / 4095.0);
+
+//capteurPct = (capteurValeur / 4095.0);
